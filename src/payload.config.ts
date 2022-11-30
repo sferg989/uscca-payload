@@ -69,7 +69,7 @@ export default buildConfig({
 
   // GraphQL is included by default at /api/graphql
   graphQL: {
-    disablePlaygroundInProduction: false,
+    disable: true
   },
 
   // if not using graphQL it should be disabled for security and performance reasons
@@ -108,9 +108,7 @@ export default buildConfig({
   // optional customization of routes
   routes: {
     api: '/api',
-    admin: '/admin',
-    graphQL: '/graphql',
-    graphQLPlayground: '/graphql-playground',
+    admin: '/admin'
   },
 
   localization: {
