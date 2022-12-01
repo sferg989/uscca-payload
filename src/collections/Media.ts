@@ -3,16 +3,6 @@ import path from 'path';
 
 const Media: CollectionConfig = {
   slug: 'media',
-  access: {
-
-    // Payload's access control functions apply to files also, meaning you can permit or deny file downloads easily
-    read: () => true,
-
-    // access is limited for demo purposes, remove to restore upload capability
-    create: () => false,
-    update: () => false,
-    delete: () => false,
-  },
   admin: {
     useAsTitle: 'filename',
     description: 'Uploads are set to read-only for this demo.',
@@ -27,12 +17,8 @@ const Media: CollectionConfig = {
     adminThumbnail: 'thumbnail',
 
     // staticDir tell Payload where to store files to and allows them to be served
-    staticDir: path.resolve(__dirname, '../../media'),
-
-    // limit the types of files allowed and request validation
-    mimeTypes: ['image/png', 'image/jpeg'],
-
-    // in addition to the original file, Payload saves resized images automatically
+    staticURL: '/uploads', 
+    staticDir: '/uploads',
     imageSizes: [
       {
         name: 'thumbnail',
@@ -51,7 +37,6 @@ const Media: CollectionConfig = {
       }
     ],
   },
-
   // upload collections inherit base fields for file information and imageSizes, then add your own for users to change
   fields: [
     {
