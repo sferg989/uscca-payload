@@ -10,7 +10,6 @@ import Posts from './collections/Posts';
 import Users from './collections/Users';
 import Pages from './collections/Pages';
 import DashboardSliderCards from './collections/DashboardSliderCards';
-import Examples from './collections/Examples';
 import MainMenu from './globals/MainMenu';
 import BeforeLogin from './components/BeforeLogin';
 import AfterDashboard from "./components/AfterDashboard";
