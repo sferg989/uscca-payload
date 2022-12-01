@@ -9,6 +9,7 @@ import Media from './collections/Media';
 import Posts from './collections/Posts';
 import Users from './collections/Users';
 import Pages from './collections/Pages';
+import Examples from './collections/Examples';
 import MainMenu from './globals/MainMenu';
 import BeforeLogin from './components/BeforeLogin';
 import AfterDashboard from "./components/AfterDashboard";
@@ -34,13 +35,13 @@ export default buildConfig({
     // custom components added to show demo info
     components: {
       beforeLogin: [
-        BeforeLogin,
+        
       ],
       beforeDashboard: [
-        BeforeDashboard,
+        
       ],
       afterDashboard: [
-        AfterDashboard,
+        
       ],
     },
   },
@@ -53,6 +54,7 @@ export default buildConfig({
     Pages,
     Users,
     Alerts,
+    Examples
   ],
 
   // globals are a single-instance collection, often used for navigation or site settings that live in one place
