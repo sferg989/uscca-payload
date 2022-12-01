@@ -57,7 +57,6 @@ export const Alerts: CollectionConfig = {
     {
       name: 'backgroundColor',
       type: 'select',
-      defaultValue: 'matchTheme',
       admin: {
         position: 'sidebar',
       },
