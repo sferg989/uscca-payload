@@ -18,6 +18,7 @@ const DashboardSliderCards: CollectionConfig = {
   },
   access: {
     read: ({ req: { user } }) => {
+      return true;
 
       // users who are authenticated will see all posts
       if (user) {

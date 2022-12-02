@@ -8,7 +8,30 @@ const Media: CollectionConfig = {
     description: 'Uploads are set to read-only for this demo.',
     group: 'Content'
   },
+ access: {
+    read: ({ req: { user } }) => {
+      return true;
 
+      // users who are authenticated will see all posts
+      if (user) {
+        return true;
+      }
+
+      // query publishDate to control when posts are visible to guests
+      return {
+        and: [
+          {
+            publishDate: {
+              less_than: new Date().toJSON(),
+            },
+            _status: {
+              equals: 'published',
+            },
+          },
+        ],
+      };
+    },
+  },
   // file uploads are stored on the server by default, plugins are available for cloud storage
   // https://github.com/richardvanbergen/payload-plugin-cloud-storage as an example
   upload: {
