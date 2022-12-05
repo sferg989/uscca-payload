@@ -9,7 +9,7 @@ import Media from './collections/Media';
 import Posts from './collections/Posts';
 import Users from './collections/Users';
 import Pages from './collections/Pages';
-import DashboardSliderCards from './collections/DashboardSliderCards';
+import MyusccaSliderCards from './collections/MyusccaSliderCards';
 import MainMenu from './globals/MainMenu';
 import BeforeLogin from './components/BeforeLogin';
 import AfterDashboard from "./components/AfterDashboard";
@@ -54,7 +54,7 @@ export default buildConfig({
     Pages,
     Users,
     Alerts,
-    DashboardSliderCards
+    MyusccaSliderCards
   ],
 
   // globals are a single-instance collection, often used for navigation or site settings that live in one place

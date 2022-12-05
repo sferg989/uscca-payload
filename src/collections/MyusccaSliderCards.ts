@@ -1,15 +1,15 @@
 import { CollectionConfig } from 'payload/types';
 
-const DashboardSliderCards: CollectionConfig = {
+const MyusccaSliderCards: CollectionConfig = {
   // the slug is used for naming the collection in the database and the APIs that are open. For example: api/posts/${id}
-  slug: 'dashboard-slider-cards',
+  slug: 'myuscca-slider-cards',
   admin: {
     // this is the name of a field which will be visible for the edit screen and is also used for relationship fields
     useAsTitle: 'name',
     // defaultColumns is used on the listing screen in the admin UI for the collection
     defaultColumns: [
-      'title',
-      'slider-cards',
+      'name',
+      'slides',
       'publishDate',
       'status'
     ],
@@ -17,8 +17,25 @@ const DashboardSliderCards: CollectionConfig = {
   },
   access: {
     read: ({ req: { user } }) => {
-      return true;
-      
+
+      // users who are authenticated will see all posts
+      if (user) {
+        return true;
+      }
+
+      // query publishDate to control when posts are visible to guests
+      return {
+        and: [
+          {
+            publishDate: {
+              less_than: new Date().toJSON(),
+            },
+            _status: {
+              equals: 'published',
+            },
+          },
+        ],
+      };
     },
   },
   // versioning with drafts enabled tells Payload to save documents to a separate collection in the database and allow publishing
@@ -30,6 +47,15 @@ const DashboardSliderCards: CollectionConfig = {
       name: 'name',
       type: 'text',
       label: 'Name',
+    },
+    {
+      name: 'publishDate',
+      type: 'date',
+      admin: {
+        position: 'sidebar',
+        description: 'Posts will not be public until this date',
+      },
+      defaultValue: () => (new Date()),
     },
     {
       name: 'slides',
@@ -102,4 +128,4 @@ const DashboardSliderCards: CollectionConfig = {
   ],
 }
 
-export default DashboardSliderCards;
+export default MyusccaSliderCards;
