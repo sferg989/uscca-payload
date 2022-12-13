@@ -27,9 +27,7 @@ dev-deploy:
 staging-deploy:
   stage: deploy
   variables:
-    CLOUDFLARE_ACCOUNT_ID: $CLOUDFLARE_ACCOUNT_ID
-    CLOUDFLARE_API_TOKEN: $CLOUDFLARE_API_TOKEN
-    DOPPLER_TOKEN: $STAGING_DOPPLER_TOKEN
+
   dependencies: []
   environment:
     name: staging
@@ -37,10 +35,6 @@ staging-deploy:
   only:
     - tags
   script:
-    - npm ci
-    - NODE_ENV=staging node getDopplerSecrets.js
-    - node ./node_modules/wrangler secret:bulk ./doppler.json --name usconcealedcarry-worker-staging
-    - node ./node_modules/wrangler publish ./src/app.ts --env staging --minify
 
 production-deploy:
   stage: deploy
