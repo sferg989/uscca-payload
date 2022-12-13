@@ -10,7 +10,10 @@ const BeforeDashboard: React.FC = () => {
 		<div className={baseClass}>
 			<Banner type="success">
 				<Check />
-				<strong>Payload is completely free and open-source.</strong> If you like what we're doing, <a href="https://github.com/payloadcms/payload" target="_blank">leave us a star on GitHub!</a>
+				<strong>Payload is completely free and open-source.</strong> If you like what we're doing,{' '}
+				<a href="https://github.com/payloadcms/payload" target="_blank">
+					leave us a star on GitHub!
+				</a>
 			</Banner>
 		</div>
 	);

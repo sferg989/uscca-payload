@@ -1,0 +1,15 @@
+{
+	"printWidth": 120,
+	"useTabs": true,
+	"singleQuote": true,
+	"endOfLine": "lf",
+	"trailingComma": "none",
+	"overrides": [
+		{
+			"files": "*.tsx, .ts",
+			"options": {
+				"printWidth": 140
+			}
+		}
+	]
+}

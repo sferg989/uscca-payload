@@ -9,23 +9,23 @@ export function homeDataDE(imageId: string, userId: string) {
             type: 'h1',
             children: [
               {
-                text: 'Payload Demo',
-              },
-            ],
+                text: 'Payload Demo'
+              }
+            ]
           },
           {
             type: 'large-body',
             children: [
               {
-                text: 'Dies ist ein Ausschnitt einer Intro-Kopie, die in einem benutzerdefinierten Rich-Text-Element namens "large body". ',
-              },
-            ],
+                text: 'Dies ist ein Ausschnitt einer Intro-Kopie, die in einem benutzerdefinierten Rich-Text-Element namens "large body". '
+              }
+            ]
           },
           {
             type: 'p',
             children: [
               {
-                text: 'Hier ist ein normaler Absatz mit a ',
+                text: 'Hier ist ein normaler Absatz mit a '
               },
               {
                 type: 'link',
@@ -33,22 +33,22 @@ export function homeDataDE(imageId: string, userId: string) {
                 newTab: false,
                 children: [
                   {
-                    text: 'verknüpfung',
-                  },
-                ],
+                    text: 'verknüpfung'
+                  }
+                ]
               },
               {
-                text: '.',
-              },
-            ],
-          },
+                text: '.'
+              }
+            ]
+          }
         ],
         links: [],
         media: imageId,
         embeddedVideo: {
-          aspectRatio: '56.25',
-        },
-      },
+          aspectRatio: '56.25'
+        }
+      }
     },
     layout: [
       {
@@ -61,28 +61,28 @@ export function homeDataDE(imageId: string, userId: string) {
                 type: 'p',
                 children: [
                   {
-                    text: 'Hier ist eine Inhaltsspalte mit einem eingebetteten Medienelement. Dieser Inhalt wird verwendet, um eine Meta-Beschreibung zu generieren.',
-                  },
-                ],
+                    text: 'Hier ist eine Inhaltsspalte mit einem eingebetteten Medienelement. Dieser Inhalt wird verwendet, um eine Meta-Beschreibung zu generieren.'
+                  }
+                ]
               },
               {
                 type: 'p',
                 children: [
                   {
-                    text: '',
-                  },
-                ],
+                    text: ''
+                  }
+                ]
               },
               {
                 type: 'upload',
                 value: {
-                  id: imageId,
+                  id: imageId
                 },
                 relationTo: 'media',
                 children: [
                   {
-                    text: ' ',
-                  },
+                    text: ' '
+                  }
                 ],
                 fields: {
                   caption: [
@@ -90,28 +90,28 @@ export function homeDataDE(imageId: string, userId: string) {
                       type: 'p',
                       children: [
                         {
-                          text: 'Hier ist eine Bildunterschrift für dieses Bild.',
-                        },
-                      ],
-                    },
+                          text: 'Hier ist eine Bildunterschrift für dieses Bild.'
+                        }
+                      ]
+                    }
                   ],
                   link: {
                     url: 'https://payloadcms.com',
-                    type: 'custom',
+                    type: 'custom'
                   },
                   alignment: 'center',
-                  enableLink: true,
-                },
+                  enableLink: true
+                }
               },
               {
                 type: 'p',
                 children: [
                   {
-                    text: '',
-                  },
-                ],
-              },
-            ],
+                    text: ''
+                  }
+                ]
+              }
+            ]
           },
           {
             width: 'half',
@@ -121,17 +121,17 @@ export function homeDataDE(imageId: string, userId: string) {
                 type: 'p',
                 children: [
                   {
-                    text: 'Hier ist eine zweite Inhaltsspalte. Es hat eine benutzerdefinierte Rich-Text-YouTube-Einbettung.',
-                  },
-                ],
+                    text: 'Hier ist eine zweite Inhaltsspalte. Es hat eine benutzerdefinierte Rich-Text-YouTube-Einbettung.'
+                  }
+                ]
               },
               {
                 type: 'p',
                 children: [
                   {
-                    text: '',
-                  },
-                ],
+                    text: ''
+                  }
+                ]
               },
               {
                 type: 'video',
@@ -139,24 +139,24 @@ export function homeDataDE(imageId: string, userId: string) {
                 source: 'youtube',
                 children: [
                   {
-                    text: ' ',
-                  },
-                ],
+                    text: ' '
+                  }
+                ]
               },
               {
                 type: 'p',
                 children: [
                   {
-                    text: '',
-                  },
-                ],
-              },
-            ],
-          },
+                    text: ''
+                  }
+                ]
+              }
+            ]
+          }
         ],
         blockName: 'Inhaltliche Einführung in zwei Spalten',
-        blockType: 'content',
-      },
+        blockType: 'content'
+      }
     ],
     slug: 'heimat',
     status: 'published',
@@ -165,9 +165,9 @@ export function homeDataDE(imageId: string, userId: string) {
       title: 'Payload CMS Demo - Heimat',
       description:
         'Hier ist eine Inhaltsspalte mit einem eingebetteten Medienelement. Dieser Inhalt wird verwendet, um eine Meta-Beschreibung zu generieren.',
-      image: imageId,
+      image: imageId
     },
     createdAt: '2022-01-31T20:26:12.877Z',
-    updatedAt: '2022-01-31T20:26:52.179Z',
+    updatedAt: '2022-01-31T20:26:52.179Z'
   };
 }

@@ -9,7 +9,7 @@ export function mailingListFormData() {
         required: true,
         id: '61f9db02bc509803a05585db',
         blockName: 'First Name',
-        blockType: 'text',
+        blockType: 'text'
       },
       {
         name: 'email',
@@ -18,8 +18,8 @@ export function mailingListFormData() {
         required: true,
         id: '61f9db45bc509803a05585dd',
         blockName: 'Email',
-        blockType: 'email',
-      },
+        blockType: 'email'
+      }
     ],
     submitButtonLabel: 'Join Mailing List',
     confirmationType: 'message',
@@ -28,16 +28,16 @@ export function mailingListFormData() {
         type: 'p',
         children: [
           {
-            text: 'Successfully joined mailing list!',
-          },
-        ],
-      },
+            text: 'Successfully joined mailing list!'
+          }
+        ]
+      }
     ],
     redirect: {
-      type: 'reference',
+      type: 'reference'
     },
     emails: [],
     createdAt: '2022-02-02T01:23:33.953Z',
-    updatedAt: '2022-02-02T01:23:33.953Z',
+    updatedAt: '2022-02-02T01:23:33.953Z'
   };
 }

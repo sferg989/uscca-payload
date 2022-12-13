@@ -21,14 +21,14 @@ export const Pages: CollectionConfig = {
       'fullTitle',
       'author',
       'createdAt',
-      'status',
+      'status'
     ],
-    group: 'Content',
+    group: 'Content'
   },
   // the access is set to allow read for anyone
   access: {
     // allow guest users to fetch pages
-    read: () => true,
+    read: () => true
     // The access for the remaining options use the default which prevents all guest access and is allowed for authenticated users
     // create,
     // update,
@@ -36,7 +36,7 @@ export const Pages: CollectionConfig = {
   },
   // versioning with drafts enabled tells Payload to save documents to a separate collection in the database and allow publishing
   versions: {
-    drafts: true,
+    drafts: true
   },
   fields: [
     {
@@ -44,7 +44,7 @@ export const Pages: CollectionConfig = {
       label: 'Page Title',
       type: 'text',
       required: true,
-      localized: true,
+      localized: true
     },
     {
       type: 'tabs',
@@ -52,8 +52,8 @@ export const Pages: CollectionConfig = {
         {
           label: 'Hero',
           fields: [
-            hero,
-          ],
+            hero
+          ]
         },
         {
           label: 'Page Layout',
@@ -70,9 +70,9 @@ export const Pages: CollectionConfig = {
                 Form,
                 Media,
                 MediaContent,
-                MediaSlider,
-              ],
-            },
+                MediaSlider
+              ]
+            }
           ]
         }
       ]
@@ -84,17 +84,17 @@ export const Pages: CollectionConfig = {
       hooks: {
         beforeChange: [
           // custom hook function to save the title using breadcrumbs field data
-          populateFullTitle,
-        ],
+          populateFullTitle
+        ]
       },
       // to hide the field from the UI for the edit/create forms we can pass it a null value
       admin: {
         components: {
-          Field: () => null,
-        },
+          Field: () => null
+        }
         // to remove it completely from the admin using the hidden property instead
         // hidden: true
-      },
+      }
     },
     {
       name: 'breadcrumbs',
@@ -107,8 +107,8 @@ export const Pages: CollectionConfig = {
           // maxDepth is 0 to avoid extra database queries on breadcrumbs by not populating extra relationship data
           maxDepth: 0,
           admin: {
-            disabled: true,
-          },
+            disabled: true
+          }
         },
         {
           type: 'row',
@@ -119,22 +119,22 @@ export const Pages: CollectionConfig = {
               type: 'text',
               admin: {
                 // assign the field widths using percents or pixels using "px"
-                width: '50%',
-              },
+                width: '50%'
+              }
             },
             {
               name: 'label',
               type: 'text',
               admin: {
-                width: '50%',
-              },
-            },
-          ],
-        },
+                width: '50%'
+              }
+            }
+          ]
+        }
       ],
       admin: {
-        disabled: true,
-      },
+        disabled: true
+      }
     },
     // since configuration is in code we can call functions to define data structures dynamically in a reusable way
     slug(),
@@ -147,8 +147,8 @@ export const Pages: CollectionConfig = {
       // telling Payload to add an index to a field instructs the database to create it for enhanced query performance
       index: true,
       admin: {
-        position: 'sidebar',
-      },
+        position: 'sidebar'
+      }
     },
     {
       name: 'author',
@@ -158,16 +158,16 @@ export const Pages: CollectionConfig = {
         beforeChange: [
           // By using a hook to set the author, admins cannot change the author as is allowed in the posts
           // collections that has a defaultValue property to populates it and allow changing in the UI
-          populateAuthor,
-        ],
+          populateAuthor
+        ]
       },
       admin: {
         // this is going to be filled by the hook, or will remain the same on edit
         readOnly: true,
-        position: 'sidebar',
-      },
-    },
-  ],
+        position: 'sidebar'
+      }
+    }
+  ]
 };
 
 export default Pages;

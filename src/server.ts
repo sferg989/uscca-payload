@@ -5,7 +5,7 @@ import { seed } from './cron/reset';
 import { resetScheduledJob } from './cron/jobs';
 
 require('dotenv').config({
-  path: path.resolve(__dirname, '../.env'),
+  path: path.resolve(__dirname, '../.env')
 });
 
 const app = express();
@@ -28,13 +28,13 @@ const start = async () => {
 			// NOTE - this is only for demo purposes and should not be used
 			// for production sites with real data
 			//await seed();
-		},
+		}
 	});
 
 	// Seed database with startup data
 	//resetScheduledJob.start();
 
 	app.listen(3000);
-}
+};
 
 start();

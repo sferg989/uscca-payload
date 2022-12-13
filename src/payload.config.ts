@@ -12,12 +12,13 @@ import Pages from './collections/Pages';
 import MyusccaSliderCards from './collections/MyusccaSliderCards';
 import MainMenu from './globals/MainMenu';
 import BeforeLogin from './components/BeforeLogin';
-import AfterDashboard from "./components/AfterDashboard";
-import { Alerts } from './collections/Alerts'
+import AfterDashboard from './components/AfterDashboard';
+import { Alerts } from './collections/Alerts';
+import { getSliders } from './endpoints/getSliders';
 import BeforeDashboard from './components/BeforeDashboard';
 
 dotenv.config({
-  path: path.resolve(__dirname, '../.env'),
+  path: path.resolve(__dirname, '../.env')
 });
 
 // the payload config is the entrypoint for configuring the entire application
@@ -35,15 +36,15 @@ export default buildConfig({
     // custom components added to show demo info
     components: {
       beforeLogin: [
-        
+
       ],
       beforeDashboard: [
-        
+
       ],
       afterDashboard: [
-        
-      ],
-    },
+
+      ]
+    }
   },
 
   // collections in Payload are synonymous with database tables, models or entities from other frameworks and systems
@@ -59,14 +60,14 @@ export default buildConfig({
 
   // globals are a single-instance collection, often used for navigation or site settings that live in one place
   globals: [
-    MainMenu,
+    MainMenu
   ],
 
   // rateLimits provide basic API DDOS (Denial-of-service) protection and can limit accidental server load from scripts
   rateLimit: {
     trustProxy: true,
     window: 2 * 60 * 1000, // 2 minutes
-    max: 2400, // limit each IP per windowMs
+    max: 2400 // limit each IP per windowMs
   },
 
   // GraphQL is included by default at /api/graphql
@@ -81,15 +82,15 @@ export default buildConfig({
     formBuilder({
       formOverrides: {
         admin: {
-          group: 'Content',
-        },
+          group: 'Content'
+        }
       },
       formSubmissionOverrides: {
         admin: {
-          group: 'Admin',
-        },
+          group: 'Admin'
+        }
       },
-      redirectRelationships: ['pages', 'posts'],
+      redirectRelationships: ['pages', 'posts']
     }),
     // @ts-ignore
     nestedDocs({
@@ -97,14 +98,14 @@ export default buildConfig({
       parentFieldSlug: 'parent',
       breadcrumbsFieldSlug: 'breadcrumbs',
       generateLabel: (_, doc) => doc.title as string,
-      generateURL: (docs) => docs.reduce((url, doc) => `${url}/${doc.slug}`, ''),
+      generateURL: (docs) => docs.reduce((url, doc) => `${url}/${doc.slug}`, '')
     }),
     seo({
       collections: [
         'pages',
-        'posts',
-      ],
-    }),
+        'posts'
+      ]
+    })
   ],
 
   // optional customization of routes
@@ -119,10 +120,24 @@ export default buildConfig({
       'en',
       'es',
       'de'
-    ],
+    ]
   },
 
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts')
   },
+  endpoints: [
+    {
+      path: '/sliders',
+      method: 'get',
+      handler: async (req, res, next) => {
+        const sliders = await getSliders();
+        if (sliders) {
+          res.status(200).send({ sliders });
+        } else {
+          res.status(404).send({ error: 'not found' });
+        }
+      }
+    }
+  ]
 });

@@ -9,7 +9,7 @@ export function contactFormData() {
         required: true,
         id: '61f9db02bc509803a05585db',
         blockName: 'First Name',
-        blockType: 'text',
+        blockType: 'text'
       },
       {
         name: 'last',
@@ -18,7 +18,7 @@ export function contactFormData() {
         required: true,
         id: '61f9db2bbc509803a05585dc',
         blockName: 'Last Name',
-        blockType: 'text',
+        blockType: 'text'
       },
       {
         name: 'email',
@@ -27,12 +27,12 @@ export function contactFormData() {
         required: true,
         id: '61f9db45bc509803a05585dd',
         blockName: 'Email',
-        blockType: 'email',
+        blockType: 'email'
       },
       {
         id: '61f9db92bc509803a05585df',
-        blockType: 'message',
-      },
+        blockType: 'message'
+      }
     ],
     submitButtonLabel: 'Submit',
     confirmationType: 'message',
@@ -41,16 +41,16 @@ export function contactFormData() {
         type: 'p',
         children: [
           {
-            text: 'Form successfully submitted!',
-          },
-        ],
-      },
+            text: 'Form successfully submitted!'
+          }
+        ]
+      }
     ],
     redirect: {
-      type: 'reference',
+      type: 'reference'
     },
     emails: [],
     createdAt: '2022-02-02T01:17:22.762Z',
-    updatedAt: '2022-02-02T01:18:22.633Z',
+    updatedAt: '2022-02-02T01:18:22.633Z'
   };
 }

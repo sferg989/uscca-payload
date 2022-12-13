@@ -9,23 +9,23 @@ export function videoSeriesData(imageId: string, userId: string, parentId: strin
             type: 'h1',
             children: [
               {
-                text: 'Payload Video Series',
-              },
-            ],
+                text: 'Payload Video Series'
+              }
+            ]
           },
           {
             type: 'large-body',
             children: [
               {
-                text: 'This is a snippet of intro copy set in a custom Rich Text element called "large body". ',
-              },
-            ],
+                text: 'This is a snippet of intro copy set in a custom Rich Text element called "large body". '
+              }
+            ]
           },
           {
             type: 'p',
             children: [
               {
-                text: 'Here is a normal paragraph with a ',
+                text: 'Here is a normal paragraph with a '
               },
               {
                 type: 'link',
@@ -33,15 +33,15 @@ export function videoSeriesData(imageId: string, userId: string, parentId: strin
                 newTab: false,
                 children: [
                   {
-                    text: 'link',
-                  },
-                ],
+                    text: 'link'
+                  }
+                ]
               },
               {
-                text: '.',
-              },
-            ],
-          },
+                text: '.'
+              }
+            ]
+          }
         ],
         links: [
           {
@@ -49,10 +49,10 @@ export function videoSeriesData(imageId: string, userId: string, parentId: strin
               appearance: 'text',
               type: 'custom',
               label: 'Documentation',
-              url: 'https://payloadcms.com/docs/getting-started/what-is-payload',
+              url: 'https://payloadcms.com/docs/getting-started/what-is-payload'
             },
-            id: '61f9b0479d0e9c0b6424c3e0',
-          },
+            id: '61f9b0479d0e9c0b6424c3e0'
+          }
         ],
         media: imageId,
         embeddedVideok: {
@@ -60,9 +60,9 @@ export function videoSeriesData(imageId: string, userId: string, parentId: strin
           poster: imageId,
           platform: 'youtube',
           videoID: 'bxWsZTtqs80',
-          aspectRatio: '56.25',
-        },
-      },
+          aspectRatio: '56.25'
+        }
+      }
     },
     layout: [
       {
@@ -75,28 +75,28 @@ export function videoSeriesData(imageId: string, userId: string, parentId: strin
                 type: 'p',
                 children: [
                   {
-                    text: 'Here is a column of content and it has an embedded Media element within it. This content will be used to generate a Meta Description.',
-                  },
-                ],
+                    text: 'Here is a column of content and it has an embedded Media element within it. This content will be used to generate a Meta Description.'
+                  }
+                ]
               },
               {
                 type: 'p',
                 children: [
                   {
-                    text: '',
-                  },
-                ],
+                    text: ''
+                  }
+                ]
               },
               {
                 type: 'upload',
                 value: {
-                  id: imageId,
+                  id: imageId
                 },
                 relationTo: 'media',
                 children: [
                   {
-                    text: ' ',
-                  },
+                    text: ' '
+                  }
                 ],
                 fields: {
                   caption: [
@@ -104,28 +104,28 @@ export function videoSeriesData(imageId: string, userId: string, parentId: strin
                       type: 'p',
                       children: [
                         {
-                          text: 'Here is a caption for this image.',
-                        },
-                      ],
-                    },
+                          text: 'Here is a caption for this image.'
+                        }
+                      ]
+                    }
                   ],
                   link: {
                     url: 'https://payloadcms.com',
-                    type: 'custom',
+                    type: 'custom'
                   },
                   alignment: 'center',
-                  enableLink: true,
-                },
+                  enableLink: true
+                }
               },
               {
                 type: 'p',
                 children: [
                   {
-                    text: '',
-                  },
-                ],
-              },
-            ],
+                    text: ''
+                  }
+                ]
+              }
+            ]
           },
           {
             width: 'half',
@@ -135,17 +135,17 @@ export function videoSeriesData(imageId: string, userId: string, parentId: strin
                 type: 'p',
                 children: [
                   {
-                    text: "Here is a second column of content. It's got a custom Rich Text YouTube embed.",
-                  },
-                ],
+                    text: "Here is a second column of content. It's got a custom Rich Text YouTube embed."
+                  }
+                ]
               },
               {
                 type: 'p',
                 children: [
                   {
-                    text: '',
-                  },
-                ],
+                    text: ''
+                  }
+                ]
               },
               {
                 type: 'video',
@@ -153,24 +153,24 @@ export function videoSeriesData(imageId: string, userId: string, parentId: strin
                 source: 'youtube',
                 children: [
                   {
-                    text: ' ',
-                  },
-                ],
+                    text: ' '
+                  }
+                ]
               },
               {
                 type: 'p',
                 children: [
                   {
-                    text: '',
-                  },
-                ],
-              },
-            ],
-          },
+                    text: ''
+                  }
+                ]
+              }
+            ]
+          }
         ],
         blockName: 'Two Column Content Intro',
-        blockType: 'content',
-      },
+        blockType: 'content'
+      }
     ],
     slug: 'video-series',
     status: 'published',
@@ -179,11 +179,11 @@ export function videoSeriesData(imageId: string, userId: string, parentId: strin
       title: 'Payload CMS Demo - Video Series',
       description:
         'Here is a column of content and it has an embedded Media element within it. This content will be used to generate a Meta Description.',
-      image: imageId,
+      image: imageId
     },
     createdAt: '2022-01-31T20:26:12.877Z',
     updatedAt: '2022-01-31T20:26:52.179Z',
     parent: parentId,
-    fullTitle: 'Home > Video Series',
+    fullTitle: 'Home > Video Series'
   };
 }

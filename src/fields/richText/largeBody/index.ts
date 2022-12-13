@@ -7,6 +7,6 @@ export default {
   Button,
   Element,
   plugins: [
-    withLargeBody,
-  ],
+    withLargeBody
+  ]
 };

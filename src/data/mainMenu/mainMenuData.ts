@@ -5,31 +5,31 @@ export function mainMenuData(homeDocId: string, caseStudiesDocId: string) {
         type: 'link',
         label: 'Home',
         subMenu: {
-          blocks: [],
+          blocks: []
         },
         link: {
           type: 'reference',
           reference: {
             value: homeDocId,
-            relationTo: 'pages',
-          },
+            relationTo: 'pages'
+          }
         },
-        id: '62883ff8853fc735c3d934a0',
+        id: '62883ff8853fc735c3d934a0'
       },
       {
         type: 'link',
         label: 'Case Studies',
         subMenu: {
-          blocks: [],
+          blocks: []
         },
         link: {
           type: 'reference',
           reference: {
             value: caseStudiesDocId,
-            relationTo: 'pages',
-          },
+            relationTo: 'pages'
+          }
         },
-        id: '62883ff8853fc735c3d934a1',
+        id: '62883ff8853fc735c3d934a1'
       },
       {
         type: 'subMenu',
@@ -39,31 +39,31 @@ export function mainMenuData(homeDocId: string, caseStudiesDocId: string) {
             {
               content: 'This is some detail about the team',
               id: '62883fe37de9fa208c22c15b',
-              blockType: 'menuDescription',
-            },
-          ],
+              blockType: 'menuDescription'
+            }
+          ]
         },
         link: {
-          type: 'reference',
+          type: 'reference'
         },
-        id: '62883ff8853fc735c3d934a2',
+        id: '62883ff8853fc735c3d934a2'
       },
       {
         type: 'link',
         label: 'External Link',
         subMenu: {
-          blocks: [],
+          blocks: []
         },
         link: {
           type: 'custom',
-          url: 'https://github.com',
+          url: 'https://github.com'
         },
-        id: '62883ff8853fc735c3d934a3',
-      },
+        id: '62883ff8853fc735c3d934a3'
+      }
     ],
     globalType: 'mainMenu',
     createdAt: '2022-05-21T01:27:20.267Z',
     updatedAt: '2022-05-21T01:27:20.267Z',
-    id: '62883ff825469d99746b52ed',
+    id: '62883ff825469d99746b52ed'
   };
 }

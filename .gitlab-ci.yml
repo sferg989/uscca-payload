@@ -1,0 +1,52 @@
+image: node:16.17.0-alpine
+
+stages:
+  - test
+  - deploy
+
+test-job:
+  stage: test
+  variables:
+
+  script:
+    - npm run lint
+
+dev-deploy:
+  stage: deploy
+  variables:
+
+  dependencies: []
+  environment:
+    name: dev
+  when: manual
+  only:
+    - main
+    - merge_requests
+  script:
+
+staging-deploy:
+  stage: deploy
+  variables:
+    CLOUDFLARE_ACCOUNT_ID: $CLOUDFLARE_ACCOUNT_ID
+    CLOUDFLARE_API_TOKEN: $CLOUDFLARE_API_TOKEN
+    DOPPLER_TOKEN: $STAGING_DOPPLER_TOKEN
+  dependencies: []
+  environment:
+    name: staging
+  when: manual
+  only:
+    - tags
+  script:
+    - npm ci
+    - NODE_ENV=staging node getDopplerSecrets.js
+    - node ./node_modules/wrangler secret:bulk ./doppler.json --name usconcealedcarry-worker-staging
+    - node ./node_modules/wrangler publish ./src/app.ts --env staging --minify
+
+production-deploy:
+  stage: deploy
+  variables:
+
+  environment:
+    name: production
+
+  script:

@@ -16,8 +16,8 @@ const richText: RichText = (
   overrides,
   additions = {
     elements: [],
-    leaves: [],
-  },
+    leaves: []
+  }
 ) => deepMerge<RichTextField, Partial<RichTextField>>(
   {
     name: 'richText',
@@ -33,12 +33,12 @@ const richText: RichText = (
                 label: 'Caption',
                 admin: {
                   elements: [
-                    ...elements,
+                    ...elements
                   ],
                   leaves: [
-                    ...leaves,
-                  ],
-                },
+                    ...leaves
+                  ]
+                }
               },
               {
                 type: 'radio',
@@ -47,47 +47,47 @@ const richText: RichText = (
                 options: [
                   {
                     label: 'Left',
-                    value: 'left',
+                    value: 'left'
                   },
                   {
                     label: 'Center',
-                    value: 'center',
+                    value: 'center'
                   },
                   {
                     label: 'Right',
-                    value: 'right',
-                  },
-                ],
+                    value: 'right'
+                  }
+                ]
               },
               {
                 name: 'enableLink',
                 type: 'checkbox',
-                label: 'Enable Link',
+                label: 'Enable Link'
               },
               link({
                 appearances: false,
                 disableLabel: true,
                 overrides: {
                   admin: {
-                    condition: (_, data) => Boolean(data?.enableLink),
-                  },
-                },
-              }),
-            ],
-          },
-        },
+                    condition: (_, data) => Boolean(data?.enableLink)
+                  }
+                }
+              })
+            ]
+          }
+        }
       },
       elements: [
         ...elements,
-        ...additions.elements || [],
+        ...additions.elements || []
       ],
       leaves: [
         ...leaves,
-        ...additions.leaves || [],
-      ],
-    },
+        ...additions.leaves || []
+      ]
+    }
   },
-  overrides,
+  overrides
 );
 
 export default richText;

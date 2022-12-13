@@ -19,28 +19,28 @@ export function futurePostData(authorId: string, categoryId: string, imageId: st
                 type: 'h3',
                 children: [
                   {
-                    text: 'This post will be public in the future but for now is only visible to authenticated users thanks to access control!',
-                  },
-                ],
-              },
+                    text: 'This post will be public in the future but for now is only visible to authenticated users thanks to access control!'
+                  }
+                ]
+              }
             ],
             links: [],
-            id: '62007c57738c2e136e916273',
-          },
+            id: '62007c57738c2e136e916273'
+          }
         ],
         id: '62007bade370656302b0c846',
         blockName: 'Post Content',
-        blockType: 'content',
-      },
+        blockType: 'content'
+      }
     ],
     meta: {
       title:
         'A Post set to Publish in the Future',
       description:
         'This post will be public in the future but for now is only visible to authenticated users thanks to access control',
-      image: imageId,
+      image: imageId
     },
     createdAt: '2021-03-23T01:56:39.154Z',
-    updatedAt: '2021-03-23T01:56:39.154Z',
+    updatedAt: '2021-03-23T01:56:39.154Z'
   };
 }
