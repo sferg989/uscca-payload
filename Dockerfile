@@ -8,14 +8,14 @@ WORKDIR /home/node
 # Install dependencies.
 COPY package*.json .
 
-RUN yarn install
+RUN npm install
 
 # Copy the source files.
 COPY src src
 COPY tsconfig.json .
 
 # Build the application.
-RUN yarn build && yarn cache clean
+RUN npm run build 
 
 # Setup the runtime container.
 FROM node:${NODE_VERSION}-alpine
@@ -29,4 +29,4 @@ COPY --from=build /home/node /home/node
 EXPOSE 3000
 
 # Run the service.
-CMD ["yarn", "run", "serve"]
+CMD ["npm", "run", "serve"]
