@@ -32,9 +32,9 @@ const start = async () => {
 	});
 
 	// Seed database with startup data
-	//resetScheduledJob.start();
-
-	app.listen(3000);
+//resetScheduledJob.start();
+	const PORT = process.env.LOCAL_PORT || 3000;
+	app.listen(PORT);
 };
 
 start();

@@ -1,9 +1,8 @@
 {
-  "name": "payload-public-demo",
-  "description": "Payload Demo",
+  "name": "uscca-payload",
+  "description": "Uscca Payload CMS",
   "version": "1.0.0",
   "main": "dist/server.js",
-  "license": "MIT",
   "scripts": {
     "start": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts nodemon",
     "dev": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts nodemon",
@@ -30,7 +29,7 @@
     "eslint-plugin-react": "^7.21.5",
     "prettier": "^2.5.1",
     "copyfiles": "^2.4.1",
-    "dotenv": "^8.2.0",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongodb": "^4.3.0",
     "node-cron": "^3.0.0",
