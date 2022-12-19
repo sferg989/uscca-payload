@@ -19,6 +19,8 @@
   ],
   "exclude": [
     "node_modules",
+    "enzyme.ts",
+    "jest.config.ts",
     "dist",
     "build",
   ],

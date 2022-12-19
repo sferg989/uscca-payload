@@ -1,36 +1,21 @@
 version: "3.8"
 
 services:
-  mongodb:
-    image: mongo
-    restart: unless-stopped
-    ports:
-      - 27017:27017
-    container_name: mongo-db
-
-    networks:
-      -  uscca-payload-net
-    volumes:
-      - db:/data/db
   app:
-    depends_on:
-      - mongodb
     build:
-      context: ./
+      context: .
       dockerfile: Dockerfile.dev
+    volumes:
+      - .:/usr/app
+      - /usr/app/node_modules
     restart: unless-stopped
     env_file: ./.env
     ports:
       - $LOCAL_PORT:$LOCAL_PORT
-    networks:
-     - uscca-payload-net
     environment:
       - PAYLOAD_SECRET_KEY=$PAYLOAD_SECRET_KEY
-      - MONGO_URL=mongodb://mongo-db:27017
+      - MONGO_URL=$MONGO_URL
     stdin_open: true
     tty: true
-networks:
-  uscca-payload-net:
-    driver: bridge
 volumes:
   db:

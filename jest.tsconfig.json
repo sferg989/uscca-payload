@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig",
+  "compilerOptions": {
+    "allowJs": true,
+    "jsx": "react"
+  },
+  
+  "include": [
+    "declarations.d.ts",
+    "node_modules",
+    "**/*.spec.*"
+  ]
+}

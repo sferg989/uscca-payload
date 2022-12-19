@@ -2,11 +2,10 @@ import React from 'react';
 
 import './index.scss';
 
-const baseClass = 'after-dashboard';
 
 const AfterDashboard: React.FC = () => {
 	return (
-		<div className={baseClass}>
+		<div className='after-dashboard'>
 			<h4>Join our Discord</h4>
 			<p>
 				Every day, developers are actively talking about Payload and helping each other build awesome things in our
