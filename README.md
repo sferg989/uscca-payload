@@ -1,6 +1,4 @@
-# myuscca
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ec903c5a-09b1-49b5-8061-98fd8ce0a35a/deploy-status)](https://app.netlify.com/sites/prod-myuscca/deploys)
+# USCCA PAYLOAD
 
 ## Pre-requisites
 
@@ -59,12 +57,9 @@
   - `styles` - Custom Payload CMS Styles for the UI.
   - `endpoints` - Custom Endpoint Functions for CMS
   - `core` - business logic, domain types, and state
-  - `pages` - next.js convention for components corresponding to routes
   - `styles` - global styles
-  - `utilities` - small, shared functions
   - `utilities` - small, shared functions
 
 ### Tests
 
 Test (.spec) files should go in the directory with the entity they're testing, or in a contained directory called 'tests'.
-
