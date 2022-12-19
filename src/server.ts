@@ -1,8 +1,6 @@
 import express from 'express';
 import payload from 'payload';
 import path from 'path';
-import { seed } from './cron/reset';
-import { resetScheduledJob } from './cron/jobs';
 
 require('dotenv').config({
   path: path.resolve(__dirname, '../.env')
