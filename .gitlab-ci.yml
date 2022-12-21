@@ -2,18 +2,12 @@ image: node:16.17.0-alpine
 
 stages:
   - test
-  - deploy
-
 test-job:
   stage: test
   variables:
 
   script:
     - npm run lint
-
-dev-deploy:
-  stage: deploy
-  variables:
 
   dependencies: []
   environment:
@@ -22,25 +16,3 @@ dev-deploy:
   only:
     - main
     - merge_requests
-  script:
-
-staging-deploy:
-  stage: deploy
-  variables:
-
-  dependencies: []
-  environment:
-    name: staging
-  when: manual
-  only:
-    - tags
-  script:
-
-production-deploy:
-  stage: deploy
-  variables:
-
-  environment:
-    name: production
-
-  script:
